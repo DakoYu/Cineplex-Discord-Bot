@@ -70,7 +70,7 @@ async def on_ready():
 @bot.command(name='movies')
 async def test(ctx, arg1='EN'):
     embed = embed_generator(
-        'WHAT\'S ON',
+        '🍿🍿🍿WHAT\'S ON🍿🍿🍿',
         'EXPERIENCE THE NEWEST MOVIE IN CINEPLEX'
         )
 
@@ -83,7 +83,7 @@ async def test(ctx, arg1='EN'):
 @bot.command(name='future')
 async def get_movies(ctx, arg1='EN'):
     embed = embed_generator(
-        'FUTURE MOVIES',
+        '📅📅📅FUTURE MOVIES📅📅📅',
         'FUTURE MOVIE RELEASE IN CINEPLEX'
         )
 
@@ -93,5 +93,27 @@ async def get_movies(ctx, arg1='EN'):
 
     await ctx.send(embed=embed)
 
+@bot.command(name='commands')
+async def commands(ctx):
+    embed = discord.Embed(
+        title='🎥Cineplex Bot Commands',
+        description='A list of commands for the bot',
+        color=0x2ecc71
+    )
+
+    embed.add_field(
+        name='**!movies**',
+        value='The command will display the newest movies in the theater\nYou can also use **!movies FR** to get movies in french!',
+        inline=False
+    )
+
+    embed.add_field(
+        name='**!future**',
+        value='The command will display the future release movies in the theater\nYou can also use **!future FR** to get future release movies in french!',
+        inline=False
+    )
+
+
+    await ctx.send(embed=embed)
 
 bot.run(token)
